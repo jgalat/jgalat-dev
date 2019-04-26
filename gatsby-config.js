@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `jgalat.dev`,
+        short_name: `jgalat.dev`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
