@@ -1,0 +1,43 @@
+{
+  "name": "jgalat.dev",
+  "private": true,
+  "description": "My personal website",
+  "version": "0.1.0",
+  "author": "Jorge Galat <jrgglt@gmail.com>",
+  "dependencies": {
+    "gatsby": "^2.3.25",
+    "gatsby-plugin-google-analytics": "^2.0.18",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "GPL-3.0",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
+    "format": "prettier --write src/**/*.{js,jsx} gatsby-*.js",
+    "start": "npm run develop",
+    "serve": "gatsby serve -H 0.0.0.0 -p 8000",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgalat/jgalat-dev"
+  },
+  "bugs": {
+    "url": "https://github.com/jgalat/jgalat-dev/issues"
+  }
+}
