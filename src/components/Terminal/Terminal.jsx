@@ -5,14 +5,20 @@ import styled from 'styled-components';
 const OuterWindow = styled.div`
   background-color: #292929;
   padding: 5px;
+  max-width: 90vw;
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
-  max-width: 90vw;
 `;
 
 const WindowTitle = styled.div`
-  color: #949494;
   margin-bottom: 5px;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+  font-size: inherit;
+  color: #949494;
+  font-weight: 400;
 `;
 
 const InnerWindow = styled.div`
@@ -42,7 +48,9 @@ const Output = styled.pre`
 function Terminal({ input, output }) {
   return (
     <OuterWindow>
-      <WindowTitle>jgalat@meme-machine:~</WindowTitle>
+      <WindowTitle>
+        <Title>jgalat@meme-machine:~</Title>
+      </WindowTitle>
       <InnerWindow>
         <Input>
           <Prompt>$ </Prompt>
