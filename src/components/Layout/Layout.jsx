@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledLayout = styled.div`
@@ -18,6 +19,10 @@ function Layout({ children }) {
       <Content>{children}</Content>
     </StyledLayout>
   );
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout;
