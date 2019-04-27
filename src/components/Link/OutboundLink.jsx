@@ -3,12 +3,12 @@ import { OutboundLink as GALink } from 'gatsby-plugin-google-analytics';
 
 export default styled(GALink)`
   &:link {
-    text-decoration: underline dotted;
+    text-decoration: underline;
     color: inherit;
   }
 
   &:visited {
-    text-decoration: underline dotted;
+    text-decoration: underline;
     color: inherit;
   }
 `;

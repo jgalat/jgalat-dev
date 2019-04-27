@@ -14,9 +14,7 @@ function urlWrapper(json) {
 
   const separator = new RegExp(matches.join('|'), 'gi');
   const parts = json.split(separator);
-  const anchors = matches.map(m => (
-    <OutboundLink href={m}>{m}</OutboundLink>
-  ));
+  const anchors = matches.map(m => <OutboundLink href={m}>{m}</OutboundLink>);
 
   anchors.forEach((anchor, i) => parts.splice(i * 2 + 1, 0, anchor));
 
