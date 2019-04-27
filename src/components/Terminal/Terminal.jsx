@@ -8,6 +8,7 @@ const OuterWindow = styled.div`
   max-width: 90vw;
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
+  line-height: 1.3;
 `;
 
 const WindowTitle = styled.div`
@@ -41,6 +42,7 @@ const Input = styled.code`
 `;
 
 const Output = styled.pre`
+  font-family: inherit;
   display: block;
   margin: 0;
 `;

@@ -1,17 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledAnchor = styled.a`
-  &:link {
-    text-decoration: underline;
-    color: inherit;
-  }
-
-  &:visited {
-    text-decoration: underline;
-    color: inherit;
-  }
-`;
+import { OutboundLink } from '../components/Link';
 
 function urlWrapper(json) {
   const urlRegex = /(https:\/\/[a-z.]+[/a-z]+)/gi;
@@ -26,7 +14,9 @@ function urlWrapper(json) {
 
   const separator = new RegExp(matches.join('|'), 'gi');
   const parts = json.split(separator);
-  const anchors = matches.map(m => <StyledAnchor href={m}>{m}</StyledAnchor>);
+  const anchors = matches.map(m => (
+    <OutboundLink href={m}>{m}</OutboundLink>
+  ));
 
   anchors.forEach((anchor, i) => parts.splice(i * 2 + 1, 0, anchor));
 

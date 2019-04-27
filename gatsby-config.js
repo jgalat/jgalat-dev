@@ -39,6 +39,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.NODE_ENV === `production` && `UA-89945529-4`,
+        respectDNT: true,
       },
     },
   ],
