@@ -11,18 +11,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `jgalat.dev`,
-        short_name: `jgalat.dev`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#000000`,
-        display: `standalone`,
-        icon: `src/images/favicon.png`,
-      },
-    },
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -44,6 +33,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `jgalat.dev`,
+        short_name: `jgalat.dev`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#000000`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+      },
+    },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
   ],
 };
