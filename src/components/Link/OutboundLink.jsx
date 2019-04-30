@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { OutboundLink as GALink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink as GTAGLink } from 'gatsby-plugin-google-gtag';
 
-export default styled(GALink)`
+export default styled(GTAGLink)`
   &:link {
     text-decoration: underline;
     color: inherit;

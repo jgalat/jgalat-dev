@@ -34,13 +34,16 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.NODE_ENV === `production` && `UA-89945529-4`,
-        respectDNT: true,
+        trackingIds: process.env.NODE_ENV === `production` && [`UA-89945529-4`],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };
