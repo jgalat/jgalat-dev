@@ -13,6 +13,7 @@ const StyledLayout = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: #f5f5f5;
 `;
 
 const Content = styled.div`
