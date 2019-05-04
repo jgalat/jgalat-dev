@@ -4,10 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require('normalize.css');
-// const React = require('react');
-// const Layout = require('./src/components/Layout');
+import React from 'react';
+import Layout from './src/components/Layout';
 
-// exports.wrapPageElement = ({ element, props }) => {
-//   return <Layout {...props}>{element}</Layout>;
-// }
+import 'normalize.css';
+
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>;
+};

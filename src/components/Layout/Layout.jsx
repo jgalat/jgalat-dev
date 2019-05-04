@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    height: 100vh;
+  }
+`;
 
 const StyledLayout = styled.div`
   display: flex;
@@ -15,9 +21,12 @@ const Content = styled.div`
 
 function Layout({ children }) {
   return (
-    <StyledLayout>
-      <Content>{children}</Content>
-    </StyledLayout>
+    <React.Fragment>
+      <GlobalStyle />
+      <StyledLayout>
+        <Content>{children}</Content>
+      </StyledLayout>
+    </React.Fragment>
   );
 }
 
