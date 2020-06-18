@@ -49,7 +49,7 @@ const SITE_QUERY = graphql`
 
 const Heading1 = styled.h1`
   font-size: 2rem;
-  margin: 0 0 24px 0;
+  margin: 0 0 16px 0;
   color: #fff;
 `;
 
