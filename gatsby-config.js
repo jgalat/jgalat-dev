@@ -1,9 +1,9 @@
-console.log();
 module.exports = {
   siteMetadata: {
     title: `jgalat.dev`,
     description: `My personal website. Yes, this is all.`,
-    author: `Jorge Galat <jrgglt@gmail.com>`,
+    author: `Jorge Galat`,
+    email: `jrgglt@gmail.com`,
     social: {
       github: `https://github.com/jgalat`,
       linkedin: `https://linkedin.com/in/jgalat`,
@@ -21,16 +21,6 @@ module.exports = {
             subsets: [`latin`],
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: process.env.NODE_ENV === `production` && [`UA-89945529-4`],
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-        },
       },
     },
     {

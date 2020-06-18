@@ -5,19 +5,18 @@ import styled, { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100vh;
+    font-family: Roboto Mono, monospace;
+    background: #000;
   }
 `;
 
 const StyledLayout = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #f5f5f5;
 `;
 
 const Content = styled.div`
-  padding: 5px;
+  margin: 64px 16px;
 `;
 
 function Layout({ children }) {
