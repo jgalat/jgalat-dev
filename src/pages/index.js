@@ -24,7 +24,7 @@ function IndexPage() {
         <React.Fragment>
           <P color="#f00075">You've unlocked my email address!</P>
           <P>
-            Email me at <Link href={`m̀ailto:${email}`}>{email}</Link>
+            Email me at <Link href={`mailto:${email}`}>{email}</Link>
           </P>
         </React.Fragment>
       )}
