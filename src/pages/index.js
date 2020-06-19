@@ -15,7 +15,7 @@ function IndexPage() {
       <Heading1>{author}</Heading1>
       <Heading2>I'm a full-stack developer</Heading2>
       <P>
-        Check my <Link href={social.linkedin}>Linkedin profile</Link>
+        Check my <Link href={social.linkedin}>LinkedIn profile</Link>
       </P>
       <P>
         See my code on <Link href={social.github}>GitHub</Link>
@@ -73,7 +73,8 @@ const Link = styled.a`
     color: #000;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #f00075;
     transition: 0.3s;
   }
