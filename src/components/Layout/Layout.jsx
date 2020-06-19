@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100vh;
-    font-family: Roboto Mono, monospace;
+    font-family: 'Source Code Pro', monospace;
     background: #000;
   }
 `;

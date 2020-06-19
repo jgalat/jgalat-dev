@@ -17,8 +17,9 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto Mono`,
+            family: `Source Code Pro`,
             subsets: [`latin`],
+            variants: [`400`, `700`],
           },
         ],
       },
