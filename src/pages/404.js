@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { navigate } from 'gatsby';
 
-import SEO from '../components/SEO';
+import SEO from '../components/seo';
 
 function NotFoundPage() {
   useEffect(() => navigate('/', { replace: true }));

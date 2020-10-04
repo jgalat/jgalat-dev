@@ -13,14 +13,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Source Code Pro`,
-            subsets: [`latin`],
-            variants: [`400`, `700`],
-          },
+          `roboto mono\:400`
         ],
       },
     },

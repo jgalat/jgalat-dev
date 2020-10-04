@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100vh;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Roboto Mono', monospace;
     background: #000;
   }
 `;
@@ -16,7 +16,7 @@ const StyledLayout = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 64px 16px;
+  margin: 64px 8px;
 `;
 
 function Layout({ children }) {
