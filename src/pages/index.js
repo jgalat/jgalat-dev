@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -92,6 +92,7 @@ const Toggler = styled.button`
 
   :focus {
     border: 2px ${(props) => props.theme.secondary} solid;
+    transition: 0.25s;
   }
 `;
 
@@ -143,6 +144,6 @@ const Link = styled.a`
   :focus {
     color: #000;
     background-color: ${(props) => props.theme.secondary};
-    transition: 0.3s;
+    transition: 0.25s linear;
   }
 `;
