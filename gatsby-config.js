@@ -17,6 +17,7 @@ module.exports = {
       options: {
         fonts: [`roboto mono\:400`],
       },
+      display: `swap`,
     },
     {
       resolve: `gatsby-plugin-manifest`,
