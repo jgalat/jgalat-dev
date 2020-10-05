@@ -88,9 +88,10 @@ const Toggler = styled.button`
   top: 16px;
   right: 16px;
   border: none;
-  background-color: transparent;
+  background: none;
+  padding: 0;
 
-  :focus {
+  :focus, :active {
     border: 2px ${(props) => props.theme.secondary} solid;
     transition: 0.25s;
   }
