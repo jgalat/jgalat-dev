@@ -1,27 +1,33 @@
-import React from 'react';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import React, { useState } from 'react';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SEO from '../components/seo';
-import useKonamiCode from '../hooks/useKonamiCode';
-import useDarkMode from '../hooks/useDarkMode';
-import { dark, light } from '../themes';
+import useKonamiCode from '../hooks/use-konami-code';
+import useColorScheme from '../hooks/use-color-scheme';
 
 function IndexPage() {
   const { site } = useStaticQuery(SITE_QUERY);
   const { author, email, social } = site.siteMetadata;
+  const [enableTransitions, setEnableTransitions] = useState(false);
   const konamiCode = useKonamiCode();
-  const [darkMode, colorSchemeToggler] = useDarkMode();
+  const [colorScheme, colorSchemeToggler] = useColorScheme();
+
   return (
-    <ThemeProvider theme={darkMode ? dark : light}>
-      <GlobalStyle />
+    <React.Fragment>
+      <GlobalStyle transitions={enableTransitions} />
       <SEO />
-      <Toggler
-        aria-label="Switch between light and dark mode"
-        onClick={colorSchemeToggler}
-      >
-        {darkMode ? '☀️' : '🌙'}
-      </Toggler>
+      {typeof window !== 'undefined' && (
+        <Toggler
+          aria-label="Switch between light and dark mode"
+          onClick={() => {
+            setEnableTransitions(true);
+            colorSchemeToggler();
+          }}
+        >
+          {colorScheme === 'dark' ? '☀️' : '🌙'}
+        </Toggler>
+      )}
       <Heading1>{author}</Heading1>
       <Heading2>I'm a full-stack developer</Heading2>
       <Text>Here are some links</Text>
@@ -41,7 +47,7 @@ function IndexPage() {
           </Text>
         </React.Fragment>
       )}
-    </ThemeProvider>
+    </React.Fragment>
   );
 }
 
@@ -63,16 +69,19 @@ const SITE_QUERY = graphql`
 `;
 
 const GlobalStyle = createGlobalStyle`
-  * {
-    transition: all 0.25s linear;
-  }
+  ${(props) =>
+    props.transitions &&
+    css`
+      * {
+        transition: all 0.25s linear;
+      }
+    `}
 
   html, body {
     height: 100vh;
     font-family: 'Roboto Mono', monospace;
-    background-color: ${(props) => props.theme.background};
-    color: ${(props) => props.theme.text};
-    transition: background-color 0.1s linear;
+    background-color: var(--color-background);
+    color: var(--color-text);
   }
 
   a, button {
@@ -93,7 +102,7 @@ const Toggler = styled.button`
 
   :focus,
   :active {
-    border: 2px ${(props) => props.theme.secondary} solid;
+    border: 2px var(--color-secondary) solid;
     transition: 0.25s;
   }
 `;
@@ -101,7 +110,7 @@ const Toggler = styled.button`
 const Heading1 = styled.h1`
   font-size: 3rem;
   margin: 0 0 8px 0;
-  color: ${(props) => props.theme.text};
+  color: var(--color-text);
   font-weight: 400;
 `;
 
@@ -124,7 +133,7 @@ const ListItem = styled.li`
 
   :before {
     content: '>> ';
-    color: ${(props) => props.theme.text};
+    color: var(--color-text);
   }
 `;
 
@@ -132,20 +141,20 @@ const Text = styled.p`
   font-size: 1.5rem;
   margin: 0 0 8px 0;
   color: ${(props) =>
-    props.secondary ? props.theme.secondary : props.theme.text};
+    props.secondary ? 'var(--color-secondary)' : 'var(--color-text)'};
 `;
 
 const Link = styled.a`
   :link,
   :visited {
     text-decoration: none;
-    color: ${(props) => props.theme.primary};
+    color: var(--color-primary);
   }
 
   :hover,
   :focus {
     color: #000;
-    background-color: ${(props) => props.theme.secondary};
+    background-color: var(--color-secondary);
     transition: 0.25s linear;
   }
 `;
