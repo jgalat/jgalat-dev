@@ -13,13 +13,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`roboto mono\:400`],
-      },
-      display: `swap`,
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `jgalat.dev`,

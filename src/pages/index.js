@@ -77,11 +77,8 @@ const GlobalStyle = createGlobalStyle`
       }
     `}
 
-  html, body {
-    height: 100vh;
+  html {
     font-family: 'Roboto Mono', monospace;
-    background-color: var(--color-background);
-    color: var(--color-text);
   }
 
   a, button {

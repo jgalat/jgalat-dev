@@ -19,8 +19,11 @@ Layout.propTypes = {
 export default Layout;
 
 const StyledLayout = styled.div`
+  height: 100vh;
   display: flex;
   justify-content: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
 `;
 
 const Content = styled.div`
