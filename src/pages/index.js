@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Moon, Sun } from 'react-feather';
 
 import SEO from '../components/seo';
 import useKonamiCode from '../hooks/use-konami-code';
@@ -9,23 +10,23 @@ import useColorScheme from '../hooks/use-color-scheme';
 function IndexPage() {
   const { site } = useStaticQuery(SITE_QUERY);
   const { author, email, social } = site.siteMetadata;
-  const [enableTransitions, setEnableTransitions] = useState(false);
   const konamiCode = useKonamiCode();
   const [colorScheme, colorSchemeToggler] = useColorScheme();
 
   return (
     <React.Fragment>
-      <GlobalStyle transitions={enableTransitions} />
+      <GlobalStyle />
       <SEO />
       {typeof window !== 'undefined' && (
         <Toggler
           aria-label="Switch between light and dark mode"
-          onClick={() => {
-            setEnableTransitions(true);
-            colorSchemeToggler();
-          }}
+          onClick={colorSchemeToggler}
         >
-          {colorScheme === 'dark' ? '☀️' : '🌙'}
+          {colorScheme === 'dark' ? (
+            <Sun size={28} color="#757575" />
+          ) : (
+            <Moon size={28} color="#757575" />
+          )}
         </Toggler>
       )}
       <Heading1>{author}</Heading1>
@@ -69,13 +70,9 @@ const SITE_QUERY = graphql`
 `;
 
 const GlobalStyle = createGlobalStyle`
-  ${(props) =>
-    props.transitions &&
-    css`
-      * {
-        transition: all 0.25s linear;
-      }
-    `}
+  * {
+    transition: all 0.25s linear;
+  }
 
   html {
     font-family: 'Roboto Mono', monospace;
@@ -89,14 +86,17 @@ const GlobalStyle = createGlobalStyle`
 const Toggler = styled.button`
   width: 56px;
   height: 56px;
-  font-size: 2rem;
   position: fixed;
   top: 16px;
   right: 16px;
   border: none;
   background: none;
   padding: 0;
-  color: var(--color-text);
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   :focus,
   :active {

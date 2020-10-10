@@ -27,5 +27,5 @@ const StyledLayout = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 80px 24px;
+  margin: 80px 20px;
 `;
