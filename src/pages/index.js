@@ -96,6 +96,7 @@ const Toggler = styled.button`
   border: none;
   background: none;
   padding: 0;
+  color: var(--color-text);
 
   :focus,
   :active {
